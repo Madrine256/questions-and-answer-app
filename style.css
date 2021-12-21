@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&family=Oswald:wght@200&display=swap');
+
+:root{
+    --bgc : hsl(142, 61%, 73%);
+    --bs: 6px 6px 15px rgba(0,0,0,0.2);
+    --cent : center;
+    --trans: all 0.3s linear;
+    --captMe:capitalize;
+    --oswald : "Oswald" , sans-serif;
+    --imperial : 'Imperial Script', cursive;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+   width: 100%;
+   font-family: var(--oswald);
+}
+nav{
+    display: grid;
+    grid-template-columns: auto auto;
+   box-shadow: var(--bs);
+}
+.logo{
+    font-size: 45px;
+    font-weight: bolder;
+    width: 100%;
+    padding: 10px;
+    text-transform: var(--captMe);
+    font-family:var(--imperial);
+    transition: var(--trans);
+    background-image: linear-gradient(rgb(91, 252, 91) , rgb(234, 7, 255) , rgb(238, 255, 0));
+    background-clip: text;
+    -webkit-text-fill-color:transparent;
+    background-size: 100%;
+}
+.logo:hover{
+  background-image: linear-gradient(green , red, black);
+  background-clip: text;
+  -webkit-text-fill-color:transparent;
+  background-size: 100%;
+}
+.links{
+    width: 100%;
+    overflow: auto;
+    margin: 5% auto;
+}
+.links a{
+    text-decoration: none;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: bolder;
+    float: left;
+    width: 33.3%;
+    text-align: var(--cent);
+    transition: var(--trans);
+}
+.links a:hover{
+    background-color: #000;
+    color: white;
+}
+.questions-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--bs);
+    width: 90%; 
+    margin: 10% 5%; 
+}
+.content{
+    position: relative;
+    padding: 10px;
+}
+.counter{
+    text-align: var(--cent);
+    padding: 10px;
+    font-size: 25px;
+    font-weight: bolder;
+}
+.question-content{
+    padding: 0 60px;
+    margin: 20px;
+}
+button{
+    background:none;
+    outline:none;
+    border: none;
+    position: absolute;
+    top:40%;
+}
+.btn i{
+    padding: 10px;
+    font-weight: bolder;
+    font-size: 30px;
+    cursor: pointer;
+    
+}
+.prev{
+   left:-10px;
+   
+}
+.next{
+   right:-10px;
+}
+.footer{
+    width: 100%;
+    text-align: center;
+    background-color:red;
+    position: fixed;
+    bottom: 0;
+    padding: 10px;
+    color: #fff;
+    font-weight: bolder;
+    font-size: 20px;
+}

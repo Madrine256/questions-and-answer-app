@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions Application</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="home">
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <h1>Code is life</h1>
+            </div>
+            <div class="links">
+                <a href="#home" >Home</a>
+                <a href="#questions" >Questions</a>
+                <a href="#about" >About</a>
+            </div>
+            
+        </nav>
+        <section id="questions">
+            <div class="questions-container">
+                <div class="content">
+                    <div class="counter">
+                        <h1>Question : 1</h1>
+                    </div><hr>
+                        <div class="question-content">
+                            <div class="question-title">
+                                <h1>Do You Love programming?</h1>
+                            </div>
+                            <div class="answers-container">
+                                
+                                <label for="answer">
+                                    <input type="radio" name="answer" id="answer" value="A">
+                                    A : Yes
+                                </label><br>
+                                <label for="answer">
+                                    <input type="radio" name="answer" id="answer" value="A">
+                                    B : No
+                                </label><br>
+                                <label for="answer">
+                                    <input type="radio" name="answer" id="answer" value="A">
+                                    C : No Yes
+                                </label><br>
+                                <label for="answer">
+                                    <input type="radio" name="answer" id="answer" value="A">
+                                    D : I dont Know
+                                </label><br>
+                            </div>
+                           
+                         </div>
+                         <button class="btn prev">
+                            <i class="fas fa-chevron-circle-left"></i>
+                        </button>
+                        <button class="btn next">
+                            <i class="fas fa-chevron-circle-right"></i>
+                        </button>   
+                                    
+                            
+                    </div>
+                   
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer">
+                <p>Copyright reserved &copy; <span id="date">2021</span> selfTaught.com</p>
+            </div>
+        </footer>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
