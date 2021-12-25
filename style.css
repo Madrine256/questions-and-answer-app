@@ -118,3 +118,17 @@ button{
     font-weight: bolder;
     font-size: 20px;
 }
+.refresh{
+    background-color: green;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    cursor: pointer;
+    width: 150px;
+    margin: 20px auto;
+    transition: var(--trans);
+}
+.refresh:hover{
+    background-color: rgba(0,0,0,0.9);
+    font-size: 25px;
+}

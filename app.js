@@ -5,6 +5,7 @@ const radioInputs = document.querySelectorAll('input[type="radio"]');
 const labels = document.querySelectorAll('label');
 const btns = document.querySelectorAll('button');
 const questionSpanCounter = document.querySelector('#qns-counter');
+const questionContentDiv = document.querySelector('.question-content')
 let counter = 0;
 window.addEventListener('DOMContentLoaded', ()=>{
     dataLoading(counter);
@@ -33,7 +34,7 @@ let dataLoading = (ourData)=>{
     btnClick();
     const question = myQuestionBox[ourData];
     qsnTitle.innerHTML = question.Myqsn;
-    qsnABout.innerHTML = `This question is about ${question.qsnAbout}`;;
+    qsnABout.innerHTML = `This question is about ${question.qsnAbout}`;
     const answers = question.answers;
     //loop through answers 
     answers.forEach(ans=>{
@@ -61,9 +62,19 @@ function btnClick(){
             }else if(btnClass.contains("next")){
                 counter++;
                 if(counter > myQuestionBox.length-1){
-                    counter  = 0;
-                    // questionSpanCounter.innerHTML = myQuestionBox.length;
-                    // this.disabled= true;
+                    const heading = document.querySelector('#h1Question');
+                    heading.innerHTML  = "Well Done, wish you the best in Your new  career!";
+                    qsnABout.textContent = "";
+                    questionContentDiv.innerHTML = `End of the exerrcise\n\t <div class="refresh"> Try Again?</div>`;
+                    //get the try again button
+                    const tryAgainBtn = document.querySelector('.refresh');
+                    tryAgainBtn.onclick = ()=>{
+                        window.location.reload();
+                    }
+                  
+                    btns[0].style.display = "none";
+                    btns[1].style.display = "none";
+                    
                 }
                 questionSpanCounter.innerHTML = counter;
                
