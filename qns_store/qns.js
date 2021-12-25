@@ -54,6 +54,62 @@ export const myQuestionBox = [
             }
         ],
         correctAns : "B"
+    },
+    {
+        qsnNum : 5,
+        qsnAbout: "HTML",
+        Myqsn : "Can we do inline css styles in html?",
+        answers : [ 
+            {
+                A : "No",
+                B : "Maybe",
+                C : "Not sure ",
+                D : "Yes"
+            }
+        ],
+        correctAns : "D"
+    },
+    {
+        qsnNum : 6,
+        qsnAbout: "CSS",
+        Myqsn : "What is CSS used for ?",
+        answers : [ 
+            {
+                A : "programming",
+                B : "for fun",
+                C : "Styling web pages to make them more attractive.",
+                D : "No Idea"
+            }
+        ],
+        correctAns : "C"
+    },
+    {
+        qsnNum : 7,
+        qsnAbout: "Javscript",
+        Myqsn : "Are functions considered  objects in JS?",
+        answers : [ 
+            {
+                A : "Nope",
+                B : "Yes",
+                C : "Never heard about it! ",
+                D : "I dont Know"
+            }
+        ],
+        correctAns : "B"
+    },
+    {
+        qsnNum : 8,
+        qsnAbout: "Javascript",
+        Myqsn : "How do we get the current year in JS?",
+        answers : [ 
+            {
+                A : "Date().getFullYear();",
+                B : "new Date().getCurrenyYear()",
+                C : "date.getYear()",
+                D : "None of the above"
+            }
+        ],
+        correctAns : "A"
     }
 
 ];
