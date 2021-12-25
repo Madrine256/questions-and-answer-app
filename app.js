@@ -5,12 +5,16 @@ const radioInputs = document.querySelectorAll('input[type="radio"]');
 const labels = document.querySelectorAll('label');
 const btns = document.querySelectorAll('button');
 const questionSpanCounter = document.querySelector('#qns-counter');
-const questionContentDiv = document.querySelector('.question-content')
+const questionContentDiv = document.querySelector('.question-content');
+const progressCounter = document.querySelector('.progressCounter');
+const progressBar = document.querySelector('.progressBar');
 let counter = 0;
+const counterWidth = 100;
+let widthNum =  counterWidth / myQuestionBox.length;
 window.addEventListener('DOMContentLoaded', ()=>{
     dataLoading(counter);
-    questionSpanCounter.innerHTML = counter;
-    btnClick();
+    // questionSpanCounter.innerHTML = counter;
+    // btnClick();
     radioInputs.forEach(inputs=>{
         inputs.checked = "";
         inputs.onchange = (e)=>{
@@ -20,7 +24,11 @@ window.addEventListener('DOMContentLoaded', ()=>{
         const myCurrentIncr = myQuestionBox[counter];
        
         if(selectedAns === myCurrentIncr.correctAns){
-            alert('u got it right');
+            alert('Amazing,You got it right!');
+          
+            progressCounter.innerHTML= widthNum + "%";
+            progressBar.style.width = widthNum + "%";
+           
         }else{
             alert('The Answer is wrong , Try Again!');
             location.reload();
@@ -34,6 +42,7 @@ let dataLoading = (ourData)=>{
     btnClick();
     const question = myQuestionBox[ourData];
     qsnTitle.innerHTML = question.Myqsn;
+    questionSpanCounter.innerHTML = question.qsnNum;
     qsnABout.innerHTML = `This question is about ${question.qsnAbout}`;
     const answers = question.answers;
     //loop through answers 
@@ -53,18 +62,28 @@ function btnClick(){
             const btnClass = e.currentTarget.classList;
             // console.log(btnClass)
             if(btnClass.contains("prev")){
+                
                 counter--;
                 if(counter < 0){
                     counter = myQuestionBox.length - 1;
                 }
-                questionSpanCounter.innerHTML = counter;
+                // questionSpanCounter.innerHTML = counter;
                 dataLoading(counter);
             }else if(btnClass.contains("next")){
+                 //set the radio btns to empty;
+                 radioInputs.forEach(inputsChecked =>{
+                    inputsChecked.checked = "";
+                })
                 counter++;
+                widthNum += 12.5;
                 if(counter > myQuestionBox.length-1){
+                   counter= "0";
+                    //change the title of displayed after all questions are answered.
                     const heading = document.querySelector('#h1Question');
                     heading.innerHTML  = "Well Done, wish you the best in Your new  career!";
+                    //set the questions about to empty.
                     qsnABout.textContent = "";
+                    //questions content set to any message.
                     questionContentDiv.innerHTML = `End of the exerrcise\n\t <div class="refresh"> Try Again?</div>`;
                     //get the try again button
                     const tryAgainBtn = document.querySelector('.refresh');
@@ -76,7 +95,7 @@ function btnClick(){
                     btns[1].style.display = "none";
                     
                 }
-                questionSpanCounter.innerHTML = counter;
+                // questionSpanCounter.innerHTML = counter;
                
                 dataLoading(counter);
             }
@@ -85,6 +104,7 @@ function btnClick(){
 } 
 
 const myDate = new Date();
-const date1 = myDate.toDateString();
+const date1 = myDate.getFullYear();
+//toDateString() gets the daya date and year.
 const copyrightDate = document.querySelector('#date');
 copyrightDate.innerHTML = date1;

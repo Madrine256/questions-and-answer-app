@@ -104,12 +104,12 @@ export const myQuestionBox = [
         answers : [ 
             {
                 A : "Date().getFullYear();",
-                B : "new Date().getCurrenyYear()",
+                B : "new Date().getFullYear()",
                 C : "date.getYear()",
                 D : "None of the above"
             }
         ],
-        correctAns : "A"
+        correctAns : "B"
     }
 
 ];
